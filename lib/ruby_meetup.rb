@@ -71,7 +71,7 @@ class Client
       unless response.is_a?(Net::HTTPSuccess)
         raise "#{response.code} #{response.message}\n#{response.body}"
       end
-      return response.body
+      return response.body.to_json
     end
   end
 
